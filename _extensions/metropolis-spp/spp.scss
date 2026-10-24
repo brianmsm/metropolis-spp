@@ -1,0 +1,193 @@
+/* Metropolis SPP — theme overlay.
+ * Original Metropolis SCSS/filter/assets are preserved unchanged.
+ * Reusable patterns from Curso Modelos Bifactor con R, S01/S02.
+ */
+
+/*-- scss:rules --*/
+:root {
+  --spp-pink: #be2161;
+  --spp-teal: #118c94;
+  --spp-ink: #243a42;
+  --spp-muted: #36545c;
+  --spp-paper: #fafbfc;
+  --spp-rule: #c9d8dc;
+}
+.reveal { color: var(--spp-ink); font-size: 32px; }
+.reveal .slides { text-align: left; }
+.reveal .slides section { color: var(--spp-ink); box-sizing: border-box; }
+.reveal .slides section h2 {
+  background: #243a42;
+  color: #fff;
+  font-size: 1.38em;
+  line-height: 1.16;
+  font-weight: 650;
+  padding: .20em .27em;
+  margin: 0 0 .48em;
+  border-radius: 5px;
+  letter-spacing: -.015em;
+}
+.reveal h3 { font-size: .96em; line-height: 1.2; font-weight: 650; }
+.reveal p { margin: .34em 0; line-height: 1.3; }
+.reveal strong { font-weight: 750; }
+.reveal a { color: #9d235c; }
+.reveal a:hover { color: #6d2345; }
+.reveal .accent, .reveal .spp-accent { color: var(--spp-pink); font-weight: 720; }
+.reveal .teal, .reveal .spp-teal { color: #087a82; font-weight: 720; }
+
+/* Intro and thematic transition slides. */
+.reveal #title-slide { text-align: left; }
+.reveal #title-slide .title { font-size: 1.55em; line-height: 1.16; }
+.reveal #title-slide .title::after {
+  content: ""; display: block; width: 28%; height: 6px;
+  background: linear-gradient(90deg, var(--spp-pink), var(--spp-teal));
+  margin: .45em 0 .12em; border-radius: 4px;
+}
+/* Avoid the orange subtitle separator inherited from the base theme. */
+.reveal #title-slide p.subtitle::after { display: none; }
+.reveal .progress span { background: var(--spp-pink); }
+.reveal .slides section.spp-section-slide {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.reveal .slides section.spp-section-slide h2 {
+  background: #d51c67 !important;
+  color: #fff !important;
+  width: 97%;
+  min-height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 35px 24px;
+  box-sizing: border-box;
+  line-height: 1.17;
+  font-size: 1.61em;
+}
+.reveal .spp-section-question {
+  font-size: 1.10em; line-height: 1.26; text-align: center;
+  max-width: 1000px; margin: .75em auto 0;
+}
+
+/* A compact, projection-legible component vocabulary. */
+.reveal .lead, .reveal .spp-lead { font-size: 1.14em; line-height: 1.27; }
+.reveal .kicker, .reveal .spp-kicker {
+  font-size: .72em; font-weight: 750;
+  text-transform: uppercase; letter-spacing: .06em; color: #8e2351;
+}
+.reveal .source, .reveal .spp-source {
+  font-size: .72em; line-height: 1.25; color: var(--spp-muted);
+  margin: .6em 0 0;
+}
+.reveal .source a, .reveal .spp-source a { color: #8c1c4d; text-decoration: underline; }
+.reveal .question, .reveal .spp-question {
+  background: #fcf0f5; border-left: 6px solid var(--spp-pink);
+  padding: .5em .7em; font-size: .96em; line-height: 1.25; margin: .5em 0;
+}
+.reveal .checkpoint, .reveal .spp-checkpoint {
+  background: #edf6f7; border-left: 6px solid var(--spp-teal);
+  padding: .45em .65em; font-size: .92em; line-height: 1.27; margin: .45em 0;
+}
+.reveal .cards, .reveal .spp-cards {
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 22px; margin: .55em 0;
+}
+.reveal .cards-3, .reveal .spp-cards-3 {
+  display: grid; grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 19px; margin: .55em 0;
+}
+.reveal .card, .reveal .spp-card {
+  min-width: 0; background: #fff; border: 1.5px solid #d0dfe3;
+  border-radius: 12px; padding: 19px 22px; box-sizing: border-box;
+}
+.reveal .card-pink, .reveal .spp-card-pink { background: #fff6fa; border-color: #dda1bc; }
+.reveal .card-teal, .reveal .spp-card-teal { background: #f0f9fa; border-color: #83bdc1; }
+.reveal .card p, .reveal .spp-card p { margin: .18em 0; line-height: 1.26; }
+.reveal .card-title, .reveal .spp-card-title {
+  display: block; font-size: .95em; line-height: 1.19;
+  font-weight: 740; margin: 0 0 .35em;
+}
+.reveal .metric-strip, .reveal .spp-metrics {
+  display: grid; grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 14px; margin: .45em 0;
+}
+.reveal .metric-strip > div, .reveal .spp-metrics > div {
+  background: #eff5f6; border-top: 5px solid var(--spp-teal); padding: 15px 12px;
+}
+.reveal .metric-strip strong, .reveal .spp-metrics strong {
+  display: block; font-size: 1.33em;
+}
+.reveal .metric-strip span, .reveal .spp-metrics span {
+  display: block; font-size: .80em; line-height: 1.2; margin-top: 5px;
+}
+
+/* Comparisons and flows explain relationships, not decoration. */
+.reveal .spp-flow {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 45px minmax(0,1fr) 45px minmax(0,1fr);
+  gap: 12px; align-items: center; margin: .65em 0;
+}
+.reveal .spp-flow-node {
+  min-height: 135px; padding: 17px 12px; border-radius: 12px;
+  border: 1.5px solid #accbd0; background: #f0f8f9;
+  display: flex; flex-direction: column; justify-content: center;
+  align-items: center; text-align: center; box-sizing: border-box;
+}
+.reveal .spp-flow-node p { margin: .13em 0; line-height: 1.20; }
+.reveal .spp-flow-node--pink { background: #fff4f8; border-color: #d8a9bf; }
+.reveal .spp-flow-arrow { text-align: center; color: #60808a; font-size: 1.25em; font-weight: 750; }
+.reveal .spp-compare { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; margin: .5em 0; }
+.reveal .spp-compare-value {
+  text-align: center; font-size: 1.55em;
+  font-weight: 740; color: #176f77; padding: .30em;
+}
+
+/* Readable output, tables and equations. */
+.reveal table {
+  width: 100%; border-collapse: collapse; font-size: .83em;
+  line-height: 1.22; margin: .45em auto;
+}
+.reveal table th {
+  background: #243a42; color: #fff; font-weight: 700; border: none;
+}
+.reveal table th, .reveal table td {
+  padding: .35em .5em; border-bottom: 1px solid #c7d7db; vertical-align: middle;
+}
+.reveal table tbody tr:nth-child(even) td { background: #f2f7f8; }
+.reveal table tbody tr:last-child td { border-bottom: 2px solid #b7cdd2; }
+.reveal table thead th code,
+.reveal table thead th code *,
+.reveal .slides section.spp-section-slide h2 code,
+.reveal .slides section.spp-section-slide h2 code * {
+  color: #fff !important; -webkit-text-fill-color: #fff !important;
+  text-shadow: none !important;
+}
+.reveal pre {
+  box-sizing: border-box; width: 100%;
+  font-size: .69em; line-height: 1.3;
+  border: 1px solid #bfd1d7; border-radius: 9px;
+  box-shadow: none; margin: .5em 0;
+}
+.reveal pre code { max-height: none; padding: 14px 17px; line-height: 1.32; }
+.reveal .math { line-height: 1.2; }
+
+/* Metropolis ships image borders/shadows; diagrams should remain clean. */
+.reveal section img {
+  border: 0; box-shadow: none; background: transparent;
+  max-width: 100%; max-height: 95%;
+}
+.reveal .spp-figure { display:block; max-width: 100%; margin: .25em auto; object-fit: contain; }
+.reveal .spp-figure img { display:block; width:100%; max-height: 435px; object-fit: contain; }
+.reveal .reference-slide .references,
+.reveal .reference-slide #refs {
+  font-size: .78em; line-height: 1.28; color: #28464d;
+}
+.reveal .reference-slide .csl-entry {
+  margin: 0 0 .75em !important; text-indent: 0 !important;
+  overflow-wrap: anywhere; break-inside: avoid;
+}
+.reveal .slide-number { font-size: 20px !important; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal * { transition: none !important; animation: none !important; }
+}

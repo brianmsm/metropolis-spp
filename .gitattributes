@@ -1,0 +1,6 @@
+# Los recursos importados se conservan byte a byte, incluidos los espacios
+# originales de su autor. Verificar whitespace en archivos propios SPP.
+_extensions/metropolis-spp/metropolis.lua -whitespace
+_extensions/metropolis-spp/metropolis.scss -whitespace
+_extensions/metropolis-spp/resources/** -whitespace
+_extensions/metropolis-spp/asset/** -whitespace

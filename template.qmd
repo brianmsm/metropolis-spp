@@ -1,0 +1,178 @@
+---
+title: "Metropolis SPP"
+subtitle: "Diapositivas académicas legibles"
+author: "Brian N. Peña-Calero"
+institute: "Sociedad Peruana de Psicometría"
+lang: es
+format:
+  metropolis-spp-revealjs:
+    transition: none
+    hash: true
+    slide-number: "c/t"
+embed-resources: true
+bibliography: references.bib
+execute:
+  echo: false
+---
+
+## Identidad para enseñar, no para decorar
+
+::: {.spp-lead}
+**Una idea por lámina**, con suficiente espacio para que se entienda.
+:::
+
+:::: {.spp-cards}
+::: {.spp-card .spp-card-pink}
+**Magenta: general y énfasis**
+
+Usa el color como *señal* del concepto que queremos destacar.
+:::
+::: {.spp-card .spp-card-teal}
+**Turquesa: específico y comparación**
+
+Mantén colores consistentes entre gráficos, tablas y diagramas.
+:::
+::::
+
+::: {.spp-source}
+Este ejemplo es ilustrativo: no representa datos de una investigación.
+:::
+
+::: {.notes}
+Presentar el propósito de la variante y pedir al público que localice la idea dominante antes de leer el resto de la lámina.
+:::
+
+## De una pregunta a un modelo {.spp-section-slide}
+
+::: {.spp-section-question}
+¿Qué cambia cuando observamos categorías en lugar de la respuesta continua?
+:::
+
+::: {.notes}
+La portada de sección introduce un problema, no un bloque adicional de texto.
+:::
+
+## De una respuesta continua a categorías
+
+:::: {.spp-flow}
+::: {.spp-flow-node}
+**Continuo latente**
+
+$Y^*$
+:::
+::: {.spp-flow-arrow}
+→
+:::
+::: {.spp-flow-node}
+**Umbrales**
+
+$\tau_1,\ \tau_2$
+:::
+::: {.spp-flow-arrow}
+→
+:::
+::: {.spp-flow-node .spp-flow-node--pink}
+**Respuesta observada**
+
+1 · 2 · 3
+:::
+::::
+
+::: {.spp-checkpoint}
+**Idea esencial:** el mecanismo de observación determina qué asociación estamos midiendo.
+:::
+
+::: {.notes}
+Esquema conceptual: los umbrales dividen el continuo en tres categorías. Los números no representan estimaciones.
+:::
+
+## Dos modelos, una restricción
+
+:::: {.spp-compare}
+::: {.spp-card .spp-card-pink}
+**Segundo orden correspondiente**
+
+Proporcionalidad de G/S dentro de un dominio.
+
+<div class="spp-compare-value">1.33 = 1.33</div>
+:::
+::: {.spp-card .spp-card-teal}
+**Bifactor libre**
+
+No impone la misma proporción.
+
+<div class="spp-compare-value">1.33 ≠ 2.24</div>
+:::
+::::
+
+::: {.spp-source}
+Valores hipotéticos, elegidos para ilustrar una restricción; no proceden de estimación real.
+:::
+
+## Una muestra, diferentes filtros
+
+::: {.spp-kicker}
+Ejemplo ficticio · números ilustrativos
+:::
+
+::: {.spp-metrics}
+<div><strong>20</strong><span>Intentos</span></div>
+<div><strong>19</strong><span>Convergentes</span></div>
+<div><strong>11</strong><span>Admisibles</span></div>
+<div><strong>8</strong><span>Chequeos adicionales</span></div>
+:::
+
+::: {.spp-checkpoint}
+**Convergencia no equivale a precisión suficiente.**
+:::
+
+::: {.notes}
+Los números son ilustrativos; se presentan como filtros anidados, no categorías independientes.
+:::
+
+## Tabla de resultados
+
+| Estimador | Datos modelados | Inferencia |
+|---|---|---|
+| ML | Continuos observados | Estándar |
+| MLR | Mismos continuos | EE y prueba robustos |
+| WLSMV | Ordinales | Umbrales y policóricas |
+
+::: {.spp-question}
+**Pregunta:** ¿ML y MLR deben cambiar las cargas puntuales sobre los mismos datos y modelo?
+:::
+
+::: {.notes}
+En los supuestos ordinarios de esta comparación, MLR mantiene las estimaciones ML y cambia la inferencia.
+:::
+
+## Sintaxis de R visible
+
+```{.r}
+library(lavaan)
+
+modelo <- '
+  G   =~ item01 + item02 + item03
+  S_V =~ item01 + item02
+'
+
+fit <- cfa(modelo, data = bateria, orthogonal = TRUE)
+summary(fit, standardized = TRUE)
+```
+
+::: {.spp-checkpoint}
+El código está presente como ejemplo **estático**, no se ejecuta ni necesita datos.
+:::
+
+## Fuentes y referencias
+
+La bibliografía se genera automáticamente, sin escribir referencias completas dentro de las láminas. Véase [@rosseel2012lavaan].
+
+::: {.spp-source}
+El estilo de referencia es el de Quarto/citeproc. El contenido y las fuentes siguen siendo responsabilidad de quien presenta.
+:::
+
+## Referencia del ejemplo {.reference-slide}
+
+::: {#refs}
+:::

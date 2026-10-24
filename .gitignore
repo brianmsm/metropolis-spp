@@ -1,0 +1,11 @@
+/_site/
+/.quarto/
+/_freeze/
+/template.html
+/template.pdf
+**/*_files/
+**/*.knit.md
+**/*.utf8.md
+.DS_Store
+.Rhistory
+.RData

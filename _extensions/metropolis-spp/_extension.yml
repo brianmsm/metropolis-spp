@@ -1,0 +1,18 @@
+title: Metropolis SPP
+author: Brian N. Peña-Calero
+version: 0.1.0
+quarto-required: ">=1.2.0"
+contributes:
+  formats:
+    revealjs:
+      theme: [serif, metropolis.scss, spp.scss]
+      filters:
+        - metropolis.lua
+      width: 1280
+      height: 720
+      margin: 0.06
+      slide-level: 2
+      slide-number: "c/t"
+      center: false
+      auto-stretch: false
+      code-fullscreen: false
