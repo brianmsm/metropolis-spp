@@ -8,19 +8,19 @@
 
 ## Instalar y utilizar
 
-**Desde un ZIP local** (válido también antes de publicar la extensión en GitHub):
+**Instalación recomendada desde GitHub** (repositorio público):
+
+```bash
+quarto add brianmsm/metropolis-spp
+```
+
+También existe el **ZIP local probado**, útil sin acceso a GitHub:
 
 ```bash
 quarto add /ruta/a/metropolis-spp-v0.1.0.zip
 ```
 
-En esta máquina, el archivo comprobado está en `/home/brian/Documents/Github/metropolis-spp/_site/metropolis-spp-v0.1.0.zip`.
-
-**Cuando el repositorio público esté disponible**, también podrás instalarlo desde la carpeta de tu proyecto Quarto:
-
-```bash
-quarto add brianmsm/metropolis-spp
-```
+En esta máquina se encuentra en `/home/brian/Documents/Github/metropolis-spp/_site/metropolis-spp-v0.1.0.zip`.
 
 Usar en el encabezado de cualquier presentación:
 
